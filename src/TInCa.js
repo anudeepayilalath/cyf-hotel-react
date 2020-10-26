@@ -1,4 +1,5 @@
 import React from "react";
+
 const TouristInfoCards = () => {
   return (
     <div id="carddiv">
