@@ -6,6 +6,7 @@ import Header from "./Header";
 import TouristInfoCards from "./TInCa";
 import Footer from "./Footer";
 import SearchResults from "./SearchResult";
+import Restaurant from "./Restaurant";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Header />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <SearchResults />
       <Footer />
     </div>
