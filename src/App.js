@@ -5,7 +5,7 @@ import "./App.css";
 import Header from "./Header";
 import TouristInfoCards from "./TInCa";
 import Footer from "./Footer";
-import SearchResults from "./SearchResult";
+//import SearchResults from "./SearchResult";
 import Restaurant from "./Restaurant";
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
-      <SearchResults />
+      {/* //<SearchResults /> */}
       <Footer />
     </div>
   );

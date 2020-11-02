@@ -1,17 +1,11 @@
-import React from "react";
-import Fakes from "./data/fakeBookings.json";
-import moment from "moment";
-console.log(Fakes);
+import React, { useState } from "react";
+//import Fakes from "./data/fakeBookings.json";
+// import moment from "moment";
+import SearchResultLine from "./SearchResultLine";
 
 // 1
 
-function SearchResults() {
-  function difference(datea, dateb) {
-    var a = moment(datea);
-    var b = moment(dateb);
-    return a.diff(b, "days");
-  }
-
+function SearchResults(props) {
   return (
     <div id="tablediv">
       <table className="table">
@@ -29,18 +23,8 @@ function SearchResults() {
           </tr>
         </thead>
         <tbody>
-          {Fakes.map((items, index) => (
-            <tr key={index}>
-              <td>{items.id}</td>
-              <td>{items.title}</td>
-              <td>{items.firstName}</td>
-              <td>{items.surname}</td>
-              <td>{items.email}</td>
-              <td>{items.roomId}</td>
-              <td>{items.checkInDate}</td>
-              <td>{items.checkOutDate}</td>
-              <td>{difference(items.checkOutDate, items.checkInDate)}</td>
-            </tr>
+          {props.results.map((items, index) => (
+            <SearchResultLine index={index} items={items} />
           ))}
         </tbody>
       </table>
