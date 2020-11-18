@@ -16,6 +16,12 @@ function SearchResultLine(props) {
     }
   }
 
+  function handleClick(e) {
+    console.log(e.target.id);
+    props.setbuttonId(e.target.id);
+  }
+  console.log(props);
+
   return (
     <tr key={props.index} onClick={clickOnLine} className={color}>
       <td>{props.items.id}</td>
@@ -27,6 +33,11 @@ function SearchResultLine(props) {
       <td>{props.items.checkInDate}</td>
       <td>{props.items.checkOutDate}</td>
       <td>{difference(props.items.checkOutDate, props.items.checkInDate)}</td>
+      <td>
+        <button onClick={handleClick} id={props.items.id}>
+          Show Profile
+        </button>
+      </td>
     </tr>
   );
 }

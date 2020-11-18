@@ -2,10 +2,12 @@ import React, { useState } from "react";
 //import Fakes from "./data/fakeBookings.json";
 // import moment from "moment";
 import SearchResultLine from "./SearchResultLine";
+import CustomerProfile from "./CustomerProfile";
 
 // 1
 
 function SearchResults(props) {
+  const [buttonId, setbuttonId] = useState(null);
   return (
     <div id="tablediv">
       <table className="table">
@@ -24,10 +26,15 @@ function SearchResults(props) {
         </thead>
         <tbody>
           {props.results.map((items, index) => (
-            <SearchResultLine index={index} items={items} />
+            <SearchResultLine
+              index={index}
+              setbuttonId={setbuttonId}
+              items={items}
+            />
           ))}
         </tbody>
       </table>
+      <CustomerProfile id={buttonId} />
     </div>
   );
 }
